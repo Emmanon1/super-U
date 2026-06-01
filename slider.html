@@ -2,40 +2,56 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Slider Validation</title>
     <style>
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        html {
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+        }
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #1a1a2e;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+            background-color: #000;
             font-family: Arial, sans-serif;
+            -webkit-text-size-adjust: 100%;
         }
         .main-container {
             position: relative;
-            width: 350px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
         }
         .background-image {
-            position: relative;
-            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
         }
         .background-image img {
-            width: 100%;
-            height: auto;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            object-fit: cover;
             display: block;
-            border-radius: 12px;
+            border-radius: 0;
         }
         .slider-overlay {
+            padding-bottom: env(safe-area-inset-bottom);
             position: absolute;
             bottom: 50px;
             left: 50%;
